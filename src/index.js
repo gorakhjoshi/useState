@@ -1,23 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './styles.css';
 
-function Theme() {
-  const [theme, setTheme] = React.useState('light');
+/*
+  INSTRUCTIONS:
+  Create a "todo" app with the following criteria.
+    1. The user can add new todo items
+    2. The user can remove todo items
+*/
 
-  const toDark = () => setTheme('dark');
-  const toLight = () => setTheme('light');
-
-  return (
-    <div className={theme}>
-      {theme === 'light' ? (
-        <button onClick={toDark}>🔦</button>
-      ) : (
-        <button onClick={toLight}>💡</button>
-      )}
-    </div>
-  );
+function Todo() {
+  return <div>Follow the instructions above.</div>;
 }
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<Theme />, rootElement);
+ReactDOM.render(<Todo />, rootElement);
