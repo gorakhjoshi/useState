@@ -2,34 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.css';
 
-/*
-  INSTRUCTIONS:
-  Convert the code below from a Class component
-  using setState to a function component using 
-  the useState Hook.
-*/
+function Theme() {
+  const [theme, setTheme] = React.useState('light');
 
-class Theme extends React.Component {
-  state = {
-    theme: 'light',
-  };
+  const toDark = () => setTheme('dark');
+  const toLight = () => setTheme('light');
 
-  toDark = () => this.setState({ theme: 'dark' });
-  toLight = () => this.setState({ theme: 'light' });
-
-  render() {
-    const { theme } = this.state;
-
-    return (
-      <div className={theme}>
-        {theme === 'light' ? (
-          <button onClick={this.toDark}>🔦</button>
-        ) : (
-          <button onClick={this.toLight}>💡</button>
-        )}
-      </div>
-    );
-  }
+  return (
+    <div className={theme}>
+      {theme === 'light' ? (
+        <button onClick={toDark}>🔦</button>
+      ) : (
+        <button onClick={toLight}>💡</button>
+      )}
+    </div>
+  );
 }
 
 const rootElement = document.getElementById('root');
